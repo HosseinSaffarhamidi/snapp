@@ -1,0 +1,350 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        android:visibility="visible"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/appBarLayout"
+                app:elevation="0dp"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#FFF"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="کجا هستید ؟ "
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:id="@+id/toolbar_text"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/close"
+                        android:visibility="gone"
+                        android:id="@+id/cancel_service"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/chevron_left"
+                        android:visibility="gone"
+                        android:id="@+id/close_hidden_box"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/search"
+                        android:id="@+id/search"
+                        />
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.cedarstudios.cedarmapssdk.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:mapbox_cameraZoom="16"
+                        app:mapbox_cameraTargetLat="38.0412"
+                        app:mapbox_cameraTargetLng="46.3993"
+                        />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/my_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="130dp"
+                        app:backgroundTint="#FF0000"
+                        android:src="@drawable/crosshairs_gps"
+                        />
+                </RelativeLayout>
+
+
+                <include layout="@layout/hidden_panel"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FFF"
+                    android:id="@+id/count_box"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="انتخاب مبدا"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/car_count"
+                        />
+                </RelativeLayout>
+
+
+                <include layout="@layout/price_box" />
+
+                <include layout="@layout/driver_info" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="#FFF"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="#dfdfdf"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/user_name"
+                    android:text="علی صدیقی"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:onClick="show_service"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/calendar_clock"
+                    android:paddingRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مدیریت سفر ها"
+                    android:textColor="#000"
+                    android:paddingTop="5dp"
+                    android:paddingRight="3dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#FFF"
+        android:id="@+id/score_layout"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dialog_btn"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تاکسی"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="امیدواریم سفر خوبی را با تاکسی تجربه کرده باشید"
+                android:layout_gravity="center_horizontal"
+                android:padding="30dp"
+                />
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/user"
+                android:id="@+id/derive_icon"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نام راننده : "
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/driver_name2"
+                    />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="لطفا با امتیاز دهی به راننده خود به ارتقا کیفیت سرویس کمک فرمایید"
+                android:layout_gravity="center_horizontal"
+                android:padding="30dp"
+                />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:id="@+id/RatingBar"
+                android:numStars="5"
+                android:rating="3"
+                android:theme="@style/RatingBarThem"
+                android:stepSize="1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ثبت امتیاز"
+                android:id="@+id/add_score"
+                android:background="@color/dialog_btn"
+                android:textColor="#FFF"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/search_driver_layout"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="در حال پیدا کردن نزدیک ترین راننده به شما ..  لطفا منتظر بمانید"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="لغو سفر"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/dialog_btn"
+                    android:textColor="#FFF"
+                    android:onClick="cancel_request"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

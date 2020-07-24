@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:elevation="0dp" >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#FFF"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+                    <TextView
+                        android:id="@+id/toolbar_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="کجا هستید؟"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:gravity="center" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/close"
+                        android:visibility="gone"
+                        android:id="@+id/close_service"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/search"
+                        android:id="@+id/search"
+                        />
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <fragment
+                    xmlns:map="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".MapsActivity" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/my_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="60dp"
+                    android:layout_marginRight="10dp"
+                    app:backgroundTint="#FF0000"
+                    android:src="@drawable/crosshairs_gps"/>
+
+                <RelativeLayout
+                    android:id="@+id/count_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FFF"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/car_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="انتخاب مبدا"
+                        android:layout_centerHorizontal="true"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/price_box"
+                    android:visibility="gone"
+                    android:layout_alignParentBottom="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="#FFF"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="کد تخفیف "
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"
+                                android:paddingBottom="15dp"
+                                android:layout_gravity="center"/>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="60dp"
+                                android:background="#FF0000"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:layout_centerHorizontal="true"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true">
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="60dp"
+                                android:background="#FF0000"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="گزینه ها"
+                                android:paddingTop="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"
+                                android:paddingBottom="15dp"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#019e3a"
+                        android:layout_alignParentBottom="true"
+                        android:onClick="request_driver"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="درخوواست اسنپ"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:textColor="#FFF"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF"
+                    android:layout_alignParentBottom="true">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:columnCount="2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_columnWeight="1"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/user"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_columnWeight="1"
+                            android:gravity="center">
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal"
+                               android:background="@drawable/platesborder">
+
+                               <LinearLayout
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:orientation="vertical"
+                                   android:padding="5dp" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="ایران"
+                                        android:layout_gravity="center"/>
+
+                                   <TextView
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:text="46"
+                                       android:layout_gravity="center"/>
+
+                               </LinearLayout>
+
+                               <view
+                                   android:layout_width="1dp"
+                                   android:layout_height="match_parent"
+                                   android:background="#000"/>
+
+                                   <LinearLayout
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:layout_gravity="center"
+                                       android:paddingRight="10dp"
+                                       android:paddingLeft="10dp">
+
+                                       <TextView
+                                           android:layout_width="wrap_content"
+                                           android:layout_height="wrap_content"
+                                           android:text="413"
+                                           android:textSize="19sp"/>
+
+                                       <TextView
+                                           android:layout_width="wrap_content"
+                                           android:layout_height="wrap_content"
+                                           android:text="ت"
+                                           android:textSize="16sp"/>
+
+                                       <TextView
+                                           android:layout_width="wrap_content"
+                                           android:layout_height="wrap_content"
+                                           android:text="16"
+                                           android:textSize="19sp"/>
+
+
+
+                                   </LinearLayout>
+
+                               <view
+                                   android:layout_width="1dp"
+                                   android:layout_height="match_parent"
+                                   android:background="#000"/>
+
+                               <LinearLayout
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="match_parent"
+                                   android:background="@drawable/platesborder2"
+                                   android:orientation="vertical">
+
+                                   <ImageView
+                                       android:layout_width="30dp"
+                                       android:layout_height="20dp"
+                                       android:src="@drawable/iran"
+                                       android:scaleType="fitXY"
+                                       android:layout_margin="3dp"/>
+
+                                   <TextView
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:text="IR."
+                                       android:textColor="#FFF"/>
+
+                                   <TextView
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:text="IRAN."
+                                       android:textColor="#FFF"/>
+
+                               </LinearLayout>
+
+                           </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="پراید سفید"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.gridlayout.widget.GridLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:background="#FFF"
+            android:layout_gravity="start">
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+</LinearLayout>

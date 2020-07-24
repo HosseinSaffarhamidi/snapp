@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layoutDirection="rtl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".RegisterActivity"
+    tools:showIn="@layout/activity_register">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_centerVertical="true"
+    android:layout_margin="30dp">
+
+    <EditText
+        android:id="@+id/name"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="نام و نام خانوادگی"
+        android:background="@drawable/editborder"
+        android:paddingRight="10dp"/>
+
+    <EditText
+        android:id="@+id/mobile"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="شماره موبایل"
+        android:background="@drawable/editborder"
+        android:paddingRight="10dp"
+        android:layout_marginTop="20dp"
+        android:inputType="phone"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="کلمه عبور"
+        android:background="@drawable/editborder"
+        android:paddingRight="10dp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ثبت نام"
+        android:layout_marginTop="20dp"
+        android:background="#4aaefa"
+        android:textColor="#FFF"
+        android:layout_gravity="center"
+        android:onClick="add_user"/>
+
+</LinearLayout>
+
+</RelativeLayout>

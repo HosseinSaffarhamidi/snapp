@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.adrom.snapp.ActiveActivity"
+    tools:showIn="@layout/activity_active">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/active_box"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                >
+
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="1"
+                    android:gravity="center"
+                    android:id="@+id/num1"
+                    />
+
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:id="@+id/num2"
+                    />
+
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:id="@+id/num3"
+                    />
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:id="@+id/num4"
+                    />
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:id="@+id/num5"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/time_active"
+                android:layout_marginTop="30dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="یک کد ۵ رقمی به شماره"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mobile_number"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="پیامک شد.لطفا کد را وارد نمایید"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="دریافت مجدد کد"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="#469afc"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="شماره را اشتباه وارد کردن"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#469afc"
+            />
+    </LinearLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ارسال کد"
+        android:layout_alignParentBottom="true"
+        android:onClick="send_code"
+        />
+</RelativeLayout>

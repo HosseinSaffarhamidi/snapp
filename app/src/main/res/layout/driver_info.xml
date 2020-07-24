@@ -1,0 +1,242 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/driver_info"
+    android:visibility="gone"
+    >
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="2"
+        android:layout_marginTop="20dp"
+        android:id="@+id/driver_info_box"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            app:layout_column="0"
+            >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/user"
+                android:id="@+id/derive_icon"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/driver_name"
+                android:paddingTop="10dp"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            app:layout_column="1"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/platesborder"
+                android:layout_marginTop="20dp"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ایران"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/city_number"
+                        android:layout_gravity="center"
+                        android:textColor="#000"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/number_plates"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/city_code"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/code_number_plates"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#000"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/platesborder2"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/iran"
+                        android:scaleType="fitXY"
+                        android:layout_margin="3dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IR."
+                        android:textColor="#FFF"
+                        android:textSize="10dp"
+                        android:layout_gravity="left"
+                        android:paddingLeft="3dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IRAN."
+                        android:textColor="#FFF"
+                        android:textSize="10dp"
+                        android:layout_gravity="left"
+                        android:paddingLeft="3dp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/car_type"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                />
+
+        </LinearLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/driver_info_box"
+        android:background="#019e3a"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:onClick="call"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cellphone"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تماس با راننده"
+                android:textColor="#FFF"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FFF"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/credit_card"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="پرداخت هزینه"
+                android:textColor="#FFF"
+                android:paddingRight="5dp"
+                android:onClick="PaymentDialog"
+                />
+        </LinearLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+</RelativeLayout>
